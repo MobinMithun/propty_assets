@@ -4,6 +4,7 @@ const PROPTY_DATA = {
     {
       id: 'p001',
       title: '3 Bed Apartment · Gulshan 2',
+      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
       price: 85000,
       priceType: 'rent',
       area: 1850,
@@ -29,6 +30,7 @@ const PROPTY_DATA = {
     {
       id: 'p002',
       title: '4 Bed Duplex · Banani',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
       price: 130000,
       priceType: 'rent',
       area: 3200,
@@ -54,6 +56,7 @@ const PROPTY_DATA = {
     {
       id: 'p003',
       title: '2 Bed Apartment · Dhanmondi',
+      image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80',
       price: 42000,
       priceType: 'rent',
       area: 1200,
@@ -79,6 +82,7 @@ const PROPTY_DATA = {
     {
       id: 'p004',
       title: '5 Bed Villa · Baridhara',
+      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
       price: 38500000,
       priceType: 'sale',
       area: 5800,
@@ -104,6 +108,7 @@ const PROPTY_DATA = {
     {
       id: 'p005',
       title: '3 Bed Apartment · Mirpur DOHS',
+      image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
       price: 55000,
       priceType: 'rent',
       area: 1650,
@@ -129,6 +134,7 @@ const PROPTY_DATA = {
     {
       id: 'p006',
       title: '2 Bed Apartment · Uttara Sector 7',
+      image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
       price: 32000,
       priceType: 'rent',
       area: 1100,
@@ -154,6 +160,7 @@ const PROPTY_DATA = {
     {
       id: 'p007',
       title: '3 Bed Apartment · Bashundhara R/A',
+      image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
       price: 65000,
       priceType: 'rent',
       area: 1950,
@@ -179,6 +186,7 @@ const PROPTY_DATA = {
     {
       id: 'p008',
       title: '1 Bed Studio · Mohakhali',
+      image: 'https://images.unsplash.com/photo-1536376074432-8d642fed43f7?auto=format&fit=crop&w=800&q=80',
       price: 28000,
       priceType: 'rent',
       area: 750,
@@ -207,7 +215,7 @@ const PROPTY_DATA = {
     {
       id: 'a001',
       name: 'Rahim Uddin Chowdhury',
-      avatar: '#5B3DF6',
+      avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80',
       initials: 'RC',
       title: 'Senior Property Consultant',
       areas: ['Gulshan', 'Baridhara', 'Banani', 'Niketan'],
@@ -225,7 +233,7 @@ const PROPTY_DATA = {
     {
       id: 'a002',
       name: 'Fatema Khanam',
-      avatar: '#0891B2',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
       initials: 'FK',
       title: 'Residential Specialist',
       areas: ['Banani', 'Mirpur DOHS', 'Cantonment'],
@@ -243,7 +251,7 @@ const PROPTY_DATA = {
     {
       id: 'a003',
       name: 'Arif Hossain',
-      avatar: '#059669',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
       initials: 'AH',
       title: 'Leasing Consultant',
       areas: ['Dhanmondi', 'Uttara', 'Mohammadpur'],
@@ -261,7 +269,7 @@ const PROPTY_DATA = {
     {
       id: 'a004',
       name: 'Nadia Rahman',
-      avatar: '#D97706',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
       initials: 'NR',
       title: 'Investment Property Advisor',
       areas: ['Bashundhara', 'Mohakhali', 'Badda'],

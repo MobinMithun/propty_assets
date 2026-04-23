@@ -238,8 +238,8 @@
       return (
         <div className="glass-interactive" onClick={() => onClick && onClick(property)} 
           style={{ background: '#fff', borderRadius: 20, overflow: 'hidden', border: '1px solid #E5E7EB', cursor: 'pointer', display: 'flex', flexDirection: 'column', height: '100%', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-          <div style={{ height: 180, background: grad, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-            <svg width="80" height="60" viewBox="0 0 80 60" fill="none" style={{ opacity: 0.4 }}><rect x="15" y="30" width="50" height="28" fill="rgba(255,255,255,0.2)" rx="2" /><polygon points="10,30 40,8 70,30" fill="rgba(255,255,255,0.3)" /><rect x="25" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="45" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="33" y="42" width="14" height="16" fill="rgba(255,255,255,0.5)" rx="1" /></svg>
+          <div style={{ height: 180, background: property.image ? `url(${property.image}) center/cover no-repeat` : grad, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            {!property.image && <svg width="80" height="60" viewBox="0 0 80 60" fill="none" style={{ opacity: 0.4 }}><rect x="15" y="30" width="50" height="28" fill="rgba(255,255,255,0.2)" rx="2" /><polygon points="10,30 40,8 70,30" fill="rgba(255,255,255,0.3)" /><rect x="25" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="45" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="33" y="42" width="14" height="16" fill="rgba(255,255,255,0.5)" rx="1" /></svg>}
             <div style={{ position: 'absolute', top: 12, left: 12, right: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <span className="glass-dark" style={{ color: '#fff', borderRadius: 8, padding: '3px 10px', fontSize: 11, fontFamily: 'Prompt', fontWeight: 600 }}>{property.type}</span>
               <VerifiedBadge badge={property.badge} />
@@ -461,14 +461,20 @@
             <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
               <div style={{ width: 240, background: '#0d0d18', borderRadius: 36, padding: '12px', boxShadow: '0 40px 80px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.08)' }}>
                 <div style={{ width: 80, height: 6, background: '#1a1a2e', borderRadius: 3, margin: '0 auto 10px' }} />
-                <div style={{ background: '#F3F4F6', borderRadius: 24, overflow: 'hidden', minHeight: 440 }}>
-                  <div style={{ background: C.purple, padding: '14px 16px 12px' }}>
+                <div style={{ background: '#F3F4F6', borderRadius: 24, overflow: 'hidden', minHeight: 440, position: 'relative' }}>
+                  <div style={{ position: 'absolute', inset: 0, background: 'url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80) center/cover' }} />
+                  <div style={{ position: 'relative', zIndex: 2, background: 'linear-gradient(to bottom, rgba(124, 58, 237, 0.9), transparent)', padding: '14px 16px 40px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                        <div style={{ width: 20, height: 20, background: 'rgba(255,255,255,0.25)', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Kanit', fontWeight: 700, fontSize: 10, color: '#fff' }}>p</div>
+                        <div style={{ width: 20, height: 20, background: '#fff', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Kanit', fontWeight: 700, fontSize: 10, color: C.purple }}>p</div>
                         <span style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: 13, color: '#fff' }}>Propty</span>
                       </div>
+                      <Icons.Menu size={16} color="#fff" />
                     </div>
+                  </div>
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)', padding: '20px 16px', zIndex: 2 }}>
+                    <div style={{ color: '#fff', fontFamily: 'Kanit', fontWeight: 700, fontSize: 14, marginBottom: 4 }}>Modern Villa in Gulshan</div>
+                    <div style={{ color: 'rgba(255,255,255,0.8)', fontFamily: 'Prompt', fontSize: 11 }}>Tk 2,50,000 / month</div>
                   </div>
                 </div>
                 <div style={{ width: 60, height: 4, background: 'rgba(255,255,255,0.3)', borderRadius: 2, margin: '10px auto 0' }} />
@@ -918,11 +924,16 @@ Respond ONLY with valid JSON (no markdown):
             <div>
               {/* Gallery */}
               <div className="glass-effect" style={{ borderRadius: 24, overflow: 'hidden', marginBottom: 24, background: '#fff', border: '1px solid #E5E7EB' }}>
-                <div style={{ height: 440, background: grad, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <svg width="120" height="90" viewBox="0 0 80 60" fill="none" style={{ opacity: 0.3 }}><rect x="15" y="30" width="50" height="28" fill="rgba(255,255,255,0.2)" rx="2" /><polygon points="10,30 40,8 70,30" fill="rgba(255,255,255,0.3)" /><rect x="25" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="45" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="33" y="42" width="14" height="16" fill="rgba(255,255,255,0.5)" rx="1" /></svg>
-                    <div className="glass-effect" style={{ fontFamily: 'Prompt', fontSize: 14, color: '#fff', marginTop: 16, background: 'rgba(0,0,0,0.2)', padding: '6px 16px', borderRadius: 100, display: 'inline-block' }}>{imgLabels[imgIdx]}</div>
-                  </div>
+                <div style={{ height: 440, background: property.image ? `url(${property.image}) center/cover no-repeat` : grad, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                  {!property.image && (
+                    <div style={{ textAlign: 'center' }}>
+                      <svg width="120" height="90" viewBox="0 0 80 60" fill="none" style={{ opacity: 0.3 }}><rect x="15" y="30" width="50" height="28" fill="rgba(255,255,255,0.2)" rx="2" /><polygon points="10,30 40,8 70,30" fill="rgba(255,255,255,0.3)" /><rect x="25" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="45" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="33" y="42" width="14" height="16" fill="rgba(255,255,255,0.5)" rx="1" /></svg>
+                      <div className="glass-effect" style={{ fontFamily: 'Prompt', fontSize: 14, color: '#fff', marginTop: 16, background: 'rgba(0,0,0,0.2)', padding: '6px 16px', borderRadius: 100, display: 'inline-block' }}>{imgLabels[imgIdx]}</div>
+                    </div>
+                  )}
+                  {property.image && (
+                    <div className="glass-dark" style={{ position: 'absolute', bottom: 16, right: 16, fontFamily: 'Prompt', fontSize: 14, color: '#fff', background: 'rgba(0,0,0,0.4)', padding: '6px 16px', borderRadius: 100, backdropFilter: 'blur(12px)' }}>{imgLabels[imgIdx]}</div>
+                  )}
                   <div style={{ position: 'absolute', top: 16, right: 16, display: 'flex', gap: 10 }}>
                     <VerifiedBadge badge={property.badge} size="md" />
                     <button onClick={() => setWishlisted(!wishlisted)} className="glass-interactive" style={{ background: 'rgba(0,0,0,0.3)', border: 'none', borderRadius: 12, width: 40, height: 40, cursor: 'pointer', backdropFilter: 'blur(8px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Icons.Heart size={18} color="#fff" filled={wishlisted}/></button>
@@ -931,8 +942,8 @@ Respond ONLY with valid JSON (no markdown):
                 </div>
                 <div style={{ display: 'flex', gap: 10, padding: 12, background: '#fff' }}>
                   {imgLabels.map((l, i) => (
-                    <div key={i} onClick={() => setImgIdx(i)} className="glass-interactive" style={{ flex: 1, height: 80, background: i === imgIdx ? grad : '#F8FAFC', borderRadius: 12, cursor: 'pointer', border: `2px solid ${imgIdx === i ? C.purple : 'transparent'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Prompt', fontSize: 13, color: i === imgIdx ? 'rgba(255,255,255,0.9)' : C.slate, fontWeight: 500 }}>
-                      {l}
+                    <div key={i} onClick={() => setImgIdx(i)} className="glass-interactive" style={{ flex: 1, height: 80, background: property.image ? `url(${property.image}) center/cover no-repeat` : grad, borderRadius: 12, cursor: 'pointer', border: `2px solid ${imgIdx === i ? C.purple : 'transparent'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Prompt', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, boxShadow: imgIdx === i ? `0 0 0 2px ${C.purple}` : 'none', opacity: imgIdx === i ? 1 : 0.6 }}>
+                      {!property.image && l}
                     </div>
                   ))}
                   <div className="glass-interactive" style={{ flex: 1, height: 80, background: '#F8FAFC', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Prompt', fontSize: 13, color: C.slate, cursor: 'pointer', border: '2px solid transparent', fontWeight: 500 }}>+27 Photos</div>
@@ -1005,7 +1016,7 @@ Respond ONLY with valid JSON (no markdown):
                 <div style={{ background: '#fff', borderRadius: 14, border: '1px solid #E5E7EB', padding: 20 }}>
                   <div style={{ fontFamily: 'Prompt', fontSize: 11, fontWeight: 600, color: C.slate, marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Listed by</div>
                   <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 12 }}>
-                    <div style={{ width: 50, height: 50, borderRadius: 12, background: agent.avatar, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: 'Kanit', fontWeight: 700, fontSize: 17, flexShrink: 0 }}>{agent.initials}</div>
+                    <div style={{ width: 50, height: 50, borderRadius: 12, background: agent.avatar?.startsWith('http') ? `url(${agent.avatar}) center/cover` : agent.avatar, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: 'Kanit', fontWeight: 700, fontSize: 17, flexShrink: 0, border: '1.5px solid #E5E7EB' }}>{!agent.avatar?.startsWith('http') && agent.initials}</div>
                     <div>
                       <div style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: 15, color: C.navy, display: 'flex', alignItems: 'center', gap: 5 }}>{agent.name}{agent.verified && <Icons.Check size={13} color={C.green}/>}</div>
                       <div style={{ fontFamily: 'Prompt', fontSize: 12, color: C.slate }}>{agent.title}</div>
@@ -1091,7 +1102,7 @@ Respond ONLY with valid JSON (no markdown):
                 <Icons.ArrowLeft size={14} /> Back to Listings
               </button>
               <div style={{ display: 'flex', gap: 32, alignItems: 'flex-end', flexWrap: 'wrap', paddingBottom: 48 }}>
-                <div className="glass-effect glass-shimmer" style={{ width: 120, height: 120, borderRadius: 28, background: agent.avatar, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: 'Kanit', fontWeight: 700, fontSize: 48, border: '4px solid rgba(255,255,255,0.2)', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>{agent.initials}</div>
+                <div className="glass-effect glass-shimmer" style={{ width: 140, height: 140, borderRadius: 32, background: agent.avatar?.startsWith('http') ? `url(${agent.avatar}) center/cover` : agent.avatar, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: 'Kanit', fontWeight: 700, fontSize: 48, border: '4px solid rgba(255,255,255,0.2)', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', flexShrink: 0 }}>{!agent.avatar?.startsWith('http') && agent.initials}</div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 8, flexWrap: 'wrap' }}>
                     <h1 style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: 36, color: '#fff', margin: 0, letterSpacing: '-1px' }}>{agent.name}</h1>
