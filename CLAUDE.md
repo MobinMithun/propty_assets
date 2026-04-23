@@ -48,13 +48,20 @@ This repository is a **living entity**. For every session and major analysis:
 
 ---
 
-## 📂 Repository Structure
-- `brand_assets/`: Source of Truth (Strategy, PDFs, Guides).
-  - `intelligence/`: **New.** Market research, insights, and roadmap updates.
-- `assets/`: UI assets, fonts, and icons.
-- `serve.mjs` & `screenshot.mjs`: Automation utilities.
+## 🔍 Competitive Benchmarking
+To build Propty with global standards, capture reference sites regularly:
+- **Usage**: `node capture_references.mjs <url1> <url2> ...`
+- **Storage**: Screenshots are saved to `brand_assets/reference_sites/` with domain and timestamp.
+- **Workflow**: Analyze these references for layout, UX patterns, and AI integration ideas.
 
 ---
+
+## 📂 Repository Structure
+- `brand_assets/`: Source of Truth (Strategy, PDFs, Guides).
+  - `intelligence/`: Market research, insights, and roadmap updates.
+  - `reference_sites/`: **New.** Screenshots of global PropTech leaders for benchmarking.
+- `assets/`: UI assets, fonts, and icons.
+- `serve.mjs`, `screenshot.mjs`, `capture_references.mjs`: Automation and analysis utilities.
 
 ## 🚀 Execution Guardrails
 - **Continuous Learning**: Every chat must contribute to the repository's long-term memory.
