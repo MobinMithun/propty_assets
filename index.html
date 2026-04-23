@@ -221,7 +221,7 @@
     }
 
     function PriceTag({ price, priceType, compact }) {
-      const fmt = n => n >= 10000000 ? `৳${(n / 10000000).toFixed(1)} Cr` : n >= 100000 ? `৳${(n / 100000).toFixed(1)} L` : `৳${n.toLocaleString()}`;
+      const fmt = n => n >= 10000000 ? `Tk${(n / 10000000).toFixed(1)} Cr` : n >= 100000 ? `Tk${(n / 100000).toFixed(1)} L` : `Tk${n.toLocaleString()}`;
       return <span style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: compact ? 18 : 24, color: C.navy }}>{fmt(price)}{priceType === 'rent' && <span style={{ fontSize: 13, fontWeight: 400, color: C.slate, fontFamily: 'Prompt' }}>/mo</span>}</span>;
     }
 
@@ -394,7 +394,7 @@
 
             <p style={{ fontSize: 19, color: 'rgba(255,255,255,0.7)', margin: '0 0 10px', lineHeight: 1.8, animation: 'fadeUp 0.7s 0.6s both', maxWidth: 600, margin: '0 auto 40px' }}>
               Verified listings. AI-powered pricing. Direct agent messaging.<br/>
-              <span style={{ fontSize: 15, opacity: 0.8 }}>আমরা ডেটা বুঝি। আপনাকে বুঝি।</span>
+              <span style={{ fontSize: 15, opacity: 0.8 }}>AI understands data. We understand you.</span>
             </p>
 
             <div className="glass-effect glass-morph" style={{ maxWidth: 720, margin: '0 auto 36px', padding: 8, borderRadius: 24, animation: 'fadeUp 0.7s 0.9s both' }}>
@@ -607,7 +607,7 @@
             return (
               <div key={p.id} style={{ position: 'absolute', left: `${lx}%`, top: `${ly}%`, transform: 'translate(-50%,-50%)', cursor: 'pointer', zIndex: sel ? 10 : 3, transition: 'all 0.2s' }} onClick={() => onSelect(p)}>
                 <div style={{ background: sel ? C.navy : C.purple, color: '#fff', borderRadius: 7, padding: '3px 7px', fontSize: 10, fontFamily: 'Kanit', fontWeight: 700, boxShadow: '0 2px 6px rgba(0,0,0,0.25)', border: sel ? `2px solid ${C.amber}` : 'none', transform: sel ? 'scale(1.15)' : 'scale(1)', whiteSpace: 'nowrap' }}>
-                  {p.priceType === 'rent' ? `৳${Math.round(p.price / 1000)}k` : `৳${(p.price / 10000000).toFixed(1)}Cr`}
+                  {p.priceType === 'rent' ? `Tk${Math.round(p.price / 1000)}k` : `Tk${(p.price / 10000000).toFixed(1)}Cr`}
                 </div>
                 <div style={{ width: 5, height: 5, background: sel ? C.navy : C.purple, borderRadius: '50%', margin: '0 auto', marginTop: -2 }} />
               </div>
@@ -773,7 +773,7 @@ Property: ${property.title}
 Location: ${property.location.area}, Dhaka
 Type: ${property.type}, ${property.furnishing}, Floor ${property.floor}/${property.totalFloors}
 Size: ${property.area} sqft | Beds: ${property.bedrooms} | Baths: ${property.bathrooms}
-Price: ৳${property.price.toLocaleString()}${property.priceType === 'rent' ? '/month' : ' sale'} | ৳${property.pricePerSqft}/sqft
+Price: Tk${property.price.toLocaleString()}${property.priceType === 'rent' ? '/month' : ' sale'} | Tk${property.pricePerSqft}/sqft
 Parking: ${property.parking ? 'Yes' : 'No'} | Amenities: ${property.amenities.join(', ')}
 
 Respond ONLY with valid JSON (no markdown):
@@ -820,7 +820,7 @@ Respond ONLY with valid JSON (no markdown):
               </div>
               <div style={{ background: '#fff', borderRadius: 10, padding: '14px', marginBottom: 12 }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, textAlign: 'center' }}>
-                  {[{ l: 'Market Low', v: `৳${result.marketRange?.low?.toLocaleString()}` }, { l: 'AI Estimate', v: `৳${result.yourPrice?.toLocaleString()}`, highlight: true }, { l: 'Market High', v: `৳${result.marketRange?.high?.toLocaleString()}` }].map(s => (
+                  {[{ l: 'Market Low', v: `Tk${result.marketRange?.low?.toLocaleString()}` }, { l: 'AI Estimate', v: `Tk${result.yourPrice?.toLocaleString()}`, highlight: true }, { l: 'Market High', v: `Tk${result.marketRange?.high?.toLocaleString()}` }].map(s => (
                     <div key={s.l} style={{ ...(s.highlight ? { borderLeft: '1px solid #E5E7EB', borderRight: '1px solid #E5E7EB' } : {}) }}>
                       <div style={{ fontFamily: 'Prompt', fontSize: 11, color: C.slate, marginBottom: 3 }}>{s.l}</div>
                       <div style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: 15, color: s.highlight ? C.purple : C.navy }}>{s.v}</div>
@@ -948,7 +948,7 @@ Respond ONLY with valid JSON (no markdown):
                   </div>
                   <div style={{ textAlign: 'right' }}>
                     <PriceTag price={property.price} priceType={property.priceType} />
-                    <div style={{ fontFamily: 'Prompt', fontSize: 13, color: C.slate, marginTop: 4 }}>৳{property.pricePerSqft}/sqft</div>
+                    <div style={{ fontFamily: 'Prompt', fontSize: 13, color: C.slate, marginTop: 4 }}>Tk{property.pricePerSqft}/sqft</div>
                   </div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: 20, padding: '24px 0', borderTop: '1px solid #F3F4F6', borderBottom: '1px solid #F3F4F6', marginBottom: 24 }}>
@@ -991,7 +991,7 @@ Respond ONLY with valid JSON (no markdown):
             <div style={{ position: 'sticky', top: 92, display: 'flex', flexDirection: 'column', gap: 20 }}>
               <div className="glass-effect glass-morph" style={{ background: 'rgba(255, 255, 255, 0.9)', borderRadius: 24, border: `1px solid ${C.purple}30`, padding: 28, boxShadow: '0 12px 40px rgba(0,0,0,0.06)' }}>
                 <PriceTag price={property.price} priceType={property.priceType} />
-                <div style={{ fontFamily: 'Prompt', fontSize: 13, color: C.slate, marginTop: 4, marginBottom: 24, fontWeight: 500 }}>৳{property.pricePerSqft}/sqft · {property.furnishing}</div>
+                <div style={{ fontFamily: 'Prompt', fontSize: 13, color: C.slate, marginTop: 4, marginBottom: 24, fontWeight: 500 }}>Tk{property.pricePerSqft}/sqft · {property.furnishing}</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   <button onClick={() => setShowBook(true)} className="glass-prominent glass-interactive" style={{ padding: '16px', background: C.purple, color: '#fff', border: 'none', borderRadius: 14, fontFamily: 'Kanit', fontWeight: 600, fontSize: 16, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, boxShadow: `0 8px 24px ${C.purple}40` }}><Icons.Calendar size={18} color="#fff"/> Book a Visit</button>
                   <button onClick={() => setShowMsg(true)} className="glass-interactive" style={{ padding: '16px', background: '#fff', color: C.purple, border: `1.5px solid ${C.purple}`, borderRadius: 14, fontFamily: 'Kanit', fontWeight: 600, fontSize: 16, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}><Icons.MessageCircle size={18} color={C.purple}/> Message Agent</button>
