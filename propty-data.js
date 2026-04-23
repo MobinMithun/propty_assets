@@ -221,11 +221,11 @@ const PROPTY_DATA = {
     {
       id: 'p008',
       title: '1 Bed Studio · Mohakhali',
-      image: 'https://images.unsplash.com/photo-1536376074432-8d642fed43f7?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=800&q=80',
       gallery: [
-        'https://images.unsplash.com/photo-1536376074432-8d642fed43f7?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80'
+        'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
       ],
       price: 28000,
       priceType: 'rent',
