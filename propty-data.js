@@ -5,6 +5,11 @@ const PROPTY_DATA = {
       id: 'p001',
       title: '3 Bed Apartment · Gulshan 2',
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 85000,
       priceType: 'rent',
       area: 1850,
@@ -31,6 +36,11 @@ const PROPTY_DATA = {
       id: 'p002',
       title: '4 Bed Duplex · Banani',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 130000,
       priceType: 'rent',
       area: 3200,
@@ -57,6 +67,11 @@ const PROPTY_DATA = {
       id: 'p003',
       title: '2 Bed Apartment · Dhanmondi',
       image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 42000,
       priceType: 'rent',
       area: 1200,
@@ -83,6 +98,11 @@ const PROPTY_DATA = {
       id: 'p004',
       title: '5 Bed Villa · Baridhara',
       image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 38500000,
       priceType: 'sale',
       area: 5800,
@@ -109,6 +129,11 @@ const PROPTY_DATA = {
       id: 'p005',
       title: '3 Bed Apartment · Mirpur DOHS',
       image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 55000,
       priceType: 'rent',
       area: 1650,
@@ -135,6 +160,11 @@ const PROPTY_DATA = {
       id: 'p006',
       title: '2 Bed Apartment · Uttara Sector 7',
       image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1484101403033-5710672d63bb?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 32000,
       priceType: 'rent',
       area: 1100,
@@ -161,6 +191,11 @@ const PROPTY_DATA = {
       id: 'p007',
       title: '3 Bed Apartment · Bashundhara R/A',
       image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1484101403033-5710672d63bb?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 65000,
       priceType: 'rent',
       area: 1950,
@@ -187,6 +222,11 @@ const PROPTY_DATA = {
       id: 'p008',
       title: '1 Bed Studio · Mohakhali',
       image: 'https://images.unsplash.com/photo-1536376074432-8d642fed43f7?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1536376074432-8d642fed43f7?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80'
+      ],
       price: 28000,
       priceType: 'rent',
       area: 750,

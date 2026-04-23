@@ -150,7 +150,8 @@
   <script type="text/babel">
     const { useState, useEffect, useRef } = React;
     const C = {
-      purple: '#7C3AED', purpleLight: '#F5F3FF', purpleDark: '#5B21B6',
+      purple: '#5B3DF6', purpleLight: '#F0EEFF', purpleDark: '#4528D4',
+      violet: '#7C3AED', violetLight: '#A78BFA',
       navy: '#1E2938', slate: '#647488', green: '#10B981', amber: '#F59E0B',
       red: '#EF4444', gray: '#F3F4F6', grayMid: '#E5E7EB', grayDark: '#9CA3AF', white: '#FFFFFF'
     };
@@ -197,6 +198,7 @@
       Linkedin: ({ size = 16, color = 'currentColor', style }) => <Ico size={size} color={color} style={style}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></Ico>,
       Info: ({ size = 16, color = 'currentColor', style }) => <Ico size={size} color={color} style={style}><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></Ico>,
       Send: ({ size = 16, color = 'currentColor', style }) => <Ico size={size} color={color} style={style}><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></Ico>,
+      Menu: ({ size = 16, color = 'currentColor', style }) => <Ico size={size} color={color} style={style}><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></Ico>,
     };
     Object.assign(window, { Ico, Icons });
 
@@ -210,11 +212,11 @@
         );
       }
       const gold = badge === 'Gold';
-      const accent = gold ? '#D97706' : '#7C3AED';
+      const accent = gold ? '#D97706' : C.violet;
       
       return (
         <span className={gold ? "glass-effect glass-shimmer glass-interactive" : "glass-effect glass-interactive"} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(255, 255, 255, 0.85)', color: accent, borderRadius: 12, padding: sm ? '4px 14px' : '8px 20px', fontSize: sm ? 11 : 13, fontFamily: 'Prompt', fontWeight: 700, border: `1px solid ${gold ? 'rgba(217, 119, 6, 0.2)' : 'rgba(124, 58, 237, 0.2)'}`, backdropFilter: 'blur(24px)', boxShadow: '0 4px 20px rgba(0,0,0,0.08)', transition: 'all 0.3s ease' }}>
-          {gold ? <Icons.Star size={sm ? 12 : 14} color="#D97706" filled /> : <Icons.Check size={sm ? 12 : 14} color="#7C3AED" />}
+          {gold ? <Icons.Star size={sm ? 12 : 14} color="#D97706" filled /> : <Icons.Check size={sm ? 12 : 14} color={C.violet} />}
           <span style={gold ? { background: 'linear-gradient(90deg, #B45309, #F59E0B, #B45309)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 100%', animation: 'glass-shimmer 4s infinite linear', fontWeight: 800 } : { letterSpacing: '0.2px' }}>{badge} Verified</span>
         </span>
       );
@@ -338,11 +340,9 @@
     }
 
     Object.assign(window, { C, Ico, Icons, VerifiedBadge, PriceTag, StarRating, PropertyCard, Modal, SearchBar, Nav });
-  </script>
 
-  <!-- BLOCK 2: HOME PAGE -->
-  <script type="text/babel">
-    const { useState: useSH, useEffect: useEH } = React;
+    // --- CONSOLIDATED BLOCKS START ---
+    const useSH = useState, useEH = useEffect;
 
     // ── Animated Hero ──────────────────────────────────────────────────────────
     function AnimatedHero({ setPage, tweaks }) {
@@ -370,10 +370,10 @@
         }
         .hero-word { display:inline-block; animation: fadeUp 0.7s both; }
       `}</style>
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(-45deg, #000000, #000000, #000000, #7C3AED, #000000, #000000, #000000)', backgroundSize: '400% 400%', animation: 'gradShift 12s ease infinite' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(-45deg, #000000, #0f1724, #0a1628, #111827, #0f1724, #000000, #0a1628)', backgroundSize: '400% 400%', animation: 'gradShift 12s ease infinite' }} />
           
           {/* Animated Background Blobs */}
-          <div style={{ position: 'absolute', top: '10%', left: '10%', width: 500, height: 500, background: 'rgba(124, 58, 237, 0.05)', filter: 'blur(150px)', borderRadius: '50%', animation: 'gradShift 20s infinite alternate' }} />
+          <div style={{ position: 'absolute', top: '10%', left: '10%', width: 500, height: 500, background: 'rgba(91, 61, 246, 0.06)', filter: 'blur(150px)', borderRadius: '50%', animation: 'gradShift 20s infinite alternate' }} />
           <div style={{ position: 'absolute', bottom: '15%', right: '15%', width: 600, height: 600, background: 'rgba(0, 0, 0, 0.9)', filter: 'blur(120px)', borderRadius: '50%' }} />
 
           {/* Hero content */}
@@ -387,7 +387,7 @@
               {'Find Your Perfect'.split(' ').map((w, i) => (
                 <span key={i} className="hero-word" style={{ animationDelay: `${0.2 + i * 0.1}s`, marginRight: '0.25em' }}>{w}</span>
               ))}<br />
-              <span style={{ background: 'linear-gradient(90deg,#fff,#A78BFA,#fff)', backgroundSize: '200%', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', animation: 'gradShift 4s ease infinite', animationDelay: '0.7s', display: 'inline-block' }}>
+              <span style={{ background: 'linear-gradient(90deg,#fff,#C4B5FD,#fff)', backgroundSize: '200%', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', animation: 'gradShift 4s ease infinite', animationDelay: '0.7s', display: 'inline-block' }}>
                 Property in Bangladesh
               </span>
             </h1>
@@ -438,7 +438,7 @@
               </div>
               <h2 style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: 'clamp(28px,4vw,44px)', color: '#fff', lineHeight: 1.15, margin: '0 0 18px', letterSpacing: '-0.5px' }}>
                 Search properties<br />
-                <span style={{ background: 'linear-gradient(90deg,#A78BFA,#7C3AED)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>from your pocket.</span>
+                <span style={{ background: 'linear-gradient(90deg,#C4B5FD,#5B3DF6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>from your pocket.</span>
               </h2>
               <p style={{ fontFamily: 'Prompt', fontSize: 16, color: 'rgba(255,255,255,0.55)', lineHeight: 1.8, margin: '0 0 36px', maxWidth: 420 }}>
                 The full Propty experience on Android and iOS. Verified listings, AI price checks, and visit booking — anywhere, anytime.
@@ -463,7 +463,7 @@
                 <div style={{ width: 80, height: 6, background: '#1a1a2e', borderRadius: 3, margin: '0 auto 10px' }} />
                 <div style={{ background: '#F3F4F6', borderRadius: 24, overflow: 'hidden', minHeight: 440, position: 'relative' }}>
                   <div style={{ position: 'absolute', inset: 0, background: 'url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80) center/cover' }} />
-                  <div style={{ position: 'relative', zIndex: 2, background: 'linear-gradient(to bottom, rgba(124, 58, 237, 0.9), transparent)', padding: '14px 16px 40px' }}>
+                  <div style={{ position: 'relative', zIndex: 2, background: 'linear-gradient(to bottom, rgba(91, 61, 246, 0.9), transparent)', padding: '14px 16px 40px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                         <div style={{ width: 20, height: 20, background: '#fff', borderRadius: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Kanit', fontWeight: 700, fontSize: 10, color: C.purple }}>p</div>
@@ -515,7 +515,7 @@
                 {[
                   { icon: <Icons.Check size={26} color={C.green} />, color: C.green, title: 'Gold-Verified Listings', desc: 'Every Gold listing undergoes a 3-step physical and document audit to ensure zero scams.' },
                   { icon: <Icons.Bot size={26} color={C.purple} />, color: C.purple, title: 'AI Price Estimator', desc: 'Our proprietary ML model analyzes 50K+ transactions to verify if the asking price is fair.' },
-                  { icon: <Icons.MessageCircle size={26} color="#7C3AED" />, color: '#7C3AED', title: 'Encrypted Messaging', desc: 'Secure, direct communication with agents without exposing your private contact details.' },
+                  { icon: <Icons.MessageCircle size={26} color={C.purple} />, color: C.purple, title: 'Encrypted Messaging', desc: 'Secure, direct communication with agents without exposing your private contact details.' },
                   { icon: <Icons.Map size={26} color={C.amber} />, color: C.amber, title: 'Interactive Search', desc: 'Search with custom polygons and view property density heatmaps across Dhaka.' },
                 ].map(f => (
                   <div key={f.title} className="glass-interactive" style={{ background: '#F8FAFC', borderRadius: 24, padding: '40px 32px', border: '1px solid #E2E8F0' }}>
@@ -568,9 +568,9 @@
           </div>
 
           {/* TRUST CTA */}
-          <div style={{ background: 'linear-gradient(135deg,#1E2938 0%,#1a1040 100%)', padding: '80px 24px', textAlign: 'center' }}>
+          <div style={{ background: 'linear-gradient(135deg,#0f1724 0%,#0a1628 100%)', padding: '80px 24px', textAlign: 'center' }}>
             <div style={{ maxWidth: 680, margin: '0 auto' }}>
-              <h2 style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: 38, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>Verified listings.<br /><span style={{ color: '#A78BFA' }}>Guaranteed.</span></h2>
+              <h2 style={{ fontFamily: 'Kanit', fontWeight: 700, fontSize: 38, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>Verified listings.<br /><span style={{ color: '#C4B5FD' }}>Guaranteed.</span></h2>
               <p style={{ fontFamily: 'Prompt', fontSize: 16, color: 'rgba(255,255,255,0.55)', margin: '0 0 36px', lineHeight: 1.8 }}>Our AI scans for duplicate images, copy-pasted descriptions, and address mismatches before any listing goes live. Every Gold badge has passed document OCR, agent GPS confirmation, and admin sign-off.</p>
               <div style={{ display: 'flex', justifyContent: 'center', gap: 16, flexWrap: 'wrap' }}>
                 <button onClick={() => setPage({ key: 'search' })} style={{ padding: '14px 32px', background: C.purple, color: '#fff', border: 'none', borderRadius: 10, fontFamily: 'Kanit', fontWeight: 600, fontSize: 16, cursor: 'pointer' }}>Browse Verified Listings</button>
@@ -584,11 +584,7 @@
       );
     }
     window.HomePage = HomePage;
-  </script>
-
-  <!-- BLOCK 3: SEARCH PAGE -->
-  <script type="text/babel">
-    const { useState: useSS } = React;
+    const useSS = useState;
 
     function MapPlaceholder({ properties, selectedId, onSelect }) {
       const areas = PROPTY_DATA.areas;
@@ -598,9 +594,9 @@
             {[15, 30, 45, 60, 75, 90].map(n => <React.Fragment key={n}><line x1={n} y1="0" x2={n} y2="100" stroke="#7ba3bf" strokeWidth="0.4" /><line x1="0" y1={n} x2="100" y2={n} stroke="#7ba3bf" strokeWidth="0.4" /></React.Fragment>)}
             <path d="M50 0 L50 100" stroke="#7ba3bf" strokeWidth="1.2" fill="none" />
             <path d="M0 50 L100 50" stroke="#7ba3bf" strokeWidth="1.2" fill="none" />
-            <ellipse cx="65" cy="46" rx="9" ry="6" fill="rgba(167, 139, 250,0.35)" stroke="#A78BFA" strokeWidth="0.8" />
+            <ellipse cx="65" cy="46" rx="9" ry="6" fill="rgba(91, 61, 246,0.25)" stroke="#8B7CF8" strokeWidth="0.8" />
           </svg>
-          <div style={{ position: 'absolute', bottom: '14%', left: '4%', right: '42%', height: '7%', background: 'rgba(167, 139, 250,0.35)', borderRadius: 100 }} />
+          <div style={{ position: 'absolute', bottom: '14%', left: '4%', right: '42%', height: '7%', background: 'rgba(91, 61, 246,0.25)', borderRadius: 100 }} />
           {areas.map(a => (
             <div key={a.name} style={{ position: 'absolute', left: `${a.x}%`, top: `${a.y}%`, transform: 'translate(-50%,-50%)', zIndex: 2 }}>
               <div style={{ background: C.purple, color: '#fff', borderRadius: 20, padding: '3px 9px', fontSize: 10, fontFamily: 'Prompt', fontWeight: 600, whiteSpace: 'nowrap', boxShadow: '0 2px 8px rgba(91,61,246,0.4)', opacity: 0.8 }}>{a.name} {a.count}</div>
@@ -760,11 +756,7 @@
       );
     }
     window.SearchPage = SearchPage;
-  </script>
-
-  <!-- BLOCK 4: LISTING DETAIL PAGE -->
-  <script type="text/babel">
-    const { useState: useSL } = React;
+    const useSL = useState;
 
     function AIPriceCheck({ property }) {
       const [state, setState] = useSL('idle');
@@ -895,16 +887,18 @@ Respond ONLY with valid JSON (no markdown):
     }
 
     function ListingPage({ propertyId, setPage }) {
-      const property = PROPTY_DATA.properties.find(p => p.id === propertyId) || PROPTY_DATA.properties[0];
-      const agent = PROPTY_DATA.agents.find(a => a.id === property.agentId);
+      const property = (typeof PROPTY_DATA !== 'undefined' && PROPTY_DATA.properties) ? (PROPTY_DATA.properties.find(p => p.id === propertyId) || PROPTY_DATA.properties[0]) : null;
+      if (!property) return <div style={{ padding: 100, textAlign: 'center', fontFamily: 'Prompt', color: C.slate }}>Property not found.</div>;
+
+      const agent = (typeof PROPTY_DATA !== 'undefined' && PROPTY_DATA.agents) ? PROPTY_DATA.agents.find(a => a.id === property.agentId) : null;
       const [imgIdx, setImgIdx] = useSL(0);
       const [showBook, setShowBook] = useSL(false);
       const [showMsg, setShowMsg] = useSL(false);
       const [wishlisted, setWishlisted] = useSL(false);
       const [msgSent, setMsgSent] = useSL(false);
       const [msg, setMsg] = useSL('');
-      const similar = PROPTY_DATA.properties.filter(p => p.id !== property.id && p.priceType === property.priceType).slice(0, 3);
-      const grad = `linear-gradient(135deg,${property.colors[0]},${property.colors[1]})`;
+      const similar = (typeof PROPTY_DATA !== 'undefined' && PROPTY_DATA.properties) ? PROPTY_DATA.properties.filter(p => p.id !== property.id && p.priceType === property.priceType).slice(0, 3) : [];
+      const grad = property.colors ? `linear-gradient(135deg,${property.colors[0]},${property.colors[1]})` : C.purple;
       const imgLabels = ['Main View', 'Living Room', 'Bedroom'];
 
       return (
@@ -924,14 +918,14 @@ Respond ONLY with valid JSON (no markdown):
             <div>
               {/* Gallery */}
               <div className="glass-effect" style={{ borderRadius: 24, overflow: 'hidden', marginBottom: 24, background: '#fff', border: '1px solid #E5E7EB' }}>
-                <div style={{ height: 440, background: property.image ? `url(${property.image}) center/cover no-repeat` : grad, display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
-                  {!property.image && (
+                <div style={{ height: 440, background: (property.gallery && property.gallery[imgIdx]) ? `url(${property.gallery[imgIdx]}) center/cover no-repeat` : (property.image ? `url(${property.image}) center/cover no-repeat` : grad), display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+                  {(!property.image && (!property.gallery || !property.gallery[imgIdx])) && (
                     <div style={{ textAlign: 'center' }}>
                       <svg width="120" height="90" viewBox="0 0 80 60" fill="none" style={{ opacity: 0.3 }}><rect x="15" y="30" width="50" height="28" fill="rgba(255,255,255,0.2)" rx="2" /><polygon points="10,30 40,8 70,30" fill="rgba(255,255,255,0.3)" /><rect x="25" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="45" y="38" width="10" height="10" fill="rgba(255,255,255,0.4)" rx="1" /><rect x="33" y="42" width="14" height="16" fill="rgba(255,255,255,0.5)" rx="1" /></svg>
                       <div className="glass-effect" style={{ fontFamily: 'Prompt', fontSize: 14, color: '#fff', marginTop: 16, background: 'rgba(0,0,0,0.2)', padding: '6px 16px', borderRadius: 100, display: 'inline-block' }}>{imgLabels[imgIdx]}</div>
                     </div>
                   )}
-                  {property.image && (
+                  {(property.image || (property.gallery && property.gallery[imgIdx])) && (
                     <div className="glass-dark" style={{ position: 'absolute', bottom: 16, right: 16, fontFamily: 'Prompt', fontSize: 14, color: '#fff', background: 'rgba(0,0,0,0.4)', padding: '6px 16px', borderRadius: 100, backdropFilter: 'blur(12px)' }}>{imgLabels[imgIdx]}</div>
                   )}
                   <div style={{ position: 'absolute', top: 16, right: 16, display: 'flex', gap: 10 }}>
@@ -942,8 +936,8 @@ Respond ONLY with valid JSON (no markdown):
                 </div>
                 <div style={{ display: 'flex', gap: 10, padding: 12, background: '#fff' }}>
                   {imgLabels.map((l, i) => (
-                    <div key={i} onClick={() => setImgIdx(i)} className="glass-interactive" style={{ flex: 1, height: 80, background: property.image ? `url(${property.image}) center/cover no-repeat` : grad, borderRadius: 12, cursor: 'pointer', border: `2px solid ${imgIdx === i ? C.purple : 'transparent'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Prompt', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, boxShadow: imgIdx === i ? `0 0 0 2px ${C.purple}` : 'none', opacity: imgIdx === i ? 1 : 0.6 }}>
-                      {!property.image && l}
+                    <div key={i} onClick={() => setImgIdx(i)} className="glass-interactive" style={{ flex: 1, height: 80, background: (property.gallery && property.gallery[i]) ? `url(${property.gallery[i]}) center/cover no-repeat` : (property.image ? `url(${property.image}) center/cover no-repeat` : grad), borderRadius: 12, cursor: 'pointer', border: `2px solid ${imgIdx === i ? C.purple : 'transparent'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Prompt', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, boxShadow: imgIdx === i ? `0 0 0 2px ${C.purple}` : 'none', opacity: imgIdx === i ? 1 : 0.6 }}>
+                      {(!property.image && (!property.gallery || !property.gallery[i])) && l}
                     </div>
                   ))}
                   <div className="glass-interactive" style={{ flex: 1, height: 80, background: '#F8FAFC', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Prompt', fontSize: 13, color: C.slate, cursor: 'pointer', border: '2px solid transparent', fontWeight: 500 }}>+27 Photos</div>
@@ -1077,11 +1071,7 @@ Respond ONLY with valid JSON (no markdown):
       );
     }
     window.ListingPage = ListingPage;
-  </script>
-
-  <!-- BLOCK 5: AGENT PAGE -->
-  <script type="text/babel">
-    const { useState: useSAg } = React;
+    const useSAg = useState;
 
     function AgentPage({ agentId, setPage }) {
       const agent = PROPTY_DATA.agents.find(a => a.id === agentId) || PROPTY_DATA.agents[0];
