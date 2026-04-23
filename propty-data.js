@@ -101,7 +101,7 @@ const PROPTY_DATA = {
       gallery: [
         'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&w=800&q=80'
+        'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80'
       ],
       price: 38500000,
       priceType: 'sale',
@@ -162,7 +162,7 @@ const PROPTY_DATA = {
       image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
       gallery: [
         'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1484101403033-5710672d63bb?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80'
       ],
       price: 32000,
@@ -194,7 +194,7 @@ const PROPTY_DATA = {
       gallery: [
         'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1484101403033-5710672d63bb?auto=format&fit=crop&w=800&q=80'
+        'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80'
       ],
       price: 65000,
       priceType: 'rent',
