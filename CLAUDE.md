@@ -29,17 +29,34 @@ Since the previous design was discarded, all new work must adhere to **premium, 
 
 ---
 
+## 🧠 Living Documentation & Evolution
+This repository is a **living entity**. For every session and major analysis:
+1.  **Update `CLAUDE.md`**: Capture new progress, updated project priorities, and refined design tokens directly in this file.
+2.  **Market Intelligence**: Store competitive research, user personas, and PropTech trends in `brand_assets/intelligence/`.
+3.  **Asset Persistence**: Save all generated assets (images, logos, diagrams) in `brand_assets/` or `assets/` immediately.
+4.  **Session Synopses**: After significant milestones, update the "Project Status" section below to maintain continuity for future Claude instances.
+
+---
+
+## 📈 Market Intelligence Storage
+- `brand_assets/intelligence/market_research.md`: Global and local PropTech trends.
+- `brand_assets/intelligence/user_personas.md`: Targeted buyer/seller/agent profiles for Bangladesh.
+- `brand_assets/intelligence/feature_roadmap.md`: Prioritized feature list based on analysis.
+
+---
+
 ## 📂 Repository Structure
-- `brand_assets/`: **The Source of Truth.** Contains strategy slides, PDFs, and brand guides.
-- `assets/`: Project-specific fonts, icons, and static media.
-- `serve.mjs` & `screenshot.mjs`: Core utilities for local development and AI vision testing.
-- `package.json`: Node dependencies for the automation scripts.
+- `brand_assets/`: Source of Truth (Strategy, PDFs, Guides).
+  - `intelligence/`: **New.** Market research, insights, and roadmap updates.
+- `assets/`: UI assets, fonts, and icons.
+- `serve.mjs` & `screenshot.mjs`: Automation utilities.
 
 ---
 
 ## 🚀 Execution Guardrails
+- **Continuous Learning**: Every chat must contribute to the repository's long-term memory.
 - **Fast Iteration**: Deliver functional prototypes early.
-- **Deep Research**: Use the `search_web` and `read_url_content` tools to benchmark against top global PropTech (Zillow, Rightmove, etc.).
-- **Consistency**: Maintain the brand's premium positioning across all pages.
-- **No Leftovers**: Keep the root clean; move temporary experiments to `scratch/`.
+- **Deep Research**: Benchmark against Zillow, Rightmove, etc., and document findings in `intelligence/`.
+- **Cleanliness**: Move temporary experiments to `scratch/`.
+
 
