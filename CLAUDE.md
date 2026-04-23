@@ -1,7 +1,10 @@
 # CLAUDE.md — Propty Intelligence & Design Hub
 
 ## Project Mission
-**Propty** is reimagining the real estate ecosystem in Bangladesh through AI-driven search, verified listings, and a seamless digital journey. This repository serves as the central hub for **Claude Projects**, brand intelligence, and high-speed design iterations.
+**Propty** is reimagining the real estate ecosystem in Bangladesh through AI-driven search, verified listings, and a seamless digital journey. This repository is the strategic engine for generating:
+- **Strategic Assets**: Pitch slides, product roadmaps, and detailed market insights.
+- **High-Fidelity Prototypes**: Dummy sites, interactive UI/UX components, and AI-powered interfaces.
+- **Market Intelligence**: Competitive analysis and localized PropTech strategy for Bangladesh.
 
 ---
 
