@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "serve": "node serve.mjs",
+    "dev": "node serve.mjs",
+    "start": "node serve.mjs",
     "screenshot": "node screenshot.mjs http://localhost:3000"
   },
   "dependencies": {

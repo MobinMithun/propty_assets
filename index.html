@@ -287,7 +287,9 @@ function ProptyFooter({setPage}){
       <div style={{maxWidth:1280,margin:'0 auto',padding:'60px 24px 40px',display:'grid',gridTemplateColumns:'2fr 1fr 1fr 1fr',gap:40}}>
         <div>
           <div style={{display:'flex',alignItems:'center',marginBottom:14,cursor:'pointer'}} onClick={()=>setPage({key:'home'})}>
-            <img src="brand_assets/Propty_logo.png" alt="Propty Logo" style={{height:28,objectFit:'contain',filter:'brightness(0) invert(1)'}} />
+            <img src="brand_assets/Propty_logo.png" alt="Propty Logo" style={{height:26,objectFit:'contain',filter:'brightness(0) invert(1)'}} />
+            <div style={{width:1,height:16,background:'rgba(255,255,255,0.2)',margin:'0 10px'}}/>
+            <img src="brand_assets/jcx_logo.svg" alt="JCX Logo" style={{height:16,objectFit:'contain',filter:'brightness(0) invert(1)',opacity:0.7}} />
           </div>
           <div style={{display:'inline-flex',background:'rgba(255,255,255,0.1)',backdropFilter:'blur(8px)',padding:4,borderRadius:12,marginBottom:32}}>
             {['sale','rent'].map(t=>(
