@@ -59,8 +59,10 @@ To build Propty with global standards, capture reference sites regularly:
 ## 📂 Repository Structure
 - `brand_assets/`: Source of Truth (Strategy, PDFs, Guides).
   - `intelligence/`: Market research, insights, and roadmap updates.
-  - `reference_sites/`: **New.** Screenshots of global PropTech leaders for benchmarking.
-- `assets/`: UI assets, fonts, and icons.
+  - `reference_sites/`: Screenshots of global PropTech leaders for benchmarking.
+- `index.html`: Main entry point (React-based Monolith).
+- `propty-data.js`: Core data model and property listings.
+- `propty-*.jsx`: Component-level modules (Search, Listing, Home, Agent).
 - `serve.mjs`, `screenshot.mjs`, `capture_references.mjs`: Automation and analysis utilities.
 
 ## 🚀 Execution Guardrails
